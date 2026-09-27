@@ -50,10 +50,6 @@
         <img src="assets/spotlight/main-landscape-02.png" alt="Main Spotlight second landscape poster" loading="lazy">
       </div>
       <div class="spotlight-placeholder">LANDSCAPE POSTER<small>16 : 9 • ADD IMAGE IN assets/spotlight/</small></div>
-      <div class="spotlight-dots" aria-label="Main Spotlight slides">
-        <button type="button" class="spotlight-dot is-active" data-slide="0" aria-label="Show Spotlight image 1" aria-current="true"></button>
-        <button type="button" class="spotlight-dot" data-slide="1" aria-label="Show Spotlight image 2"></button>
-      </div>
     </div>
     <div class="spotlight-copy"><div class="eyebrow gold">THE NIGHTS OF INSOMNIA</div><h3>THE<br>NIGHTS<br>OF<br>INSOMNIA</h3></div>
   </div>
