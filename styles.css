@@ -1995,3 +1995,155 @@ body{font-family:var(--body)!important}
     letter-spacing:-.2px!important;
   }
 }
+
+
+/* =========================================================
+   FINAL SPOTLIGHT ARTWORK / MOBILE TYPOGRAPHY POLISH
+   ========================================================= */
+.spotlight-main-poster{
+  position:relative!important;
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  aspect-ratio:auto!important;
+  overflow:hidden!important;
+  background:#050a19!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:stretch!important;
+  justify-content:flex-start!important;
+  touch-action:pan-y!important;
+}
+.spotlight-viewport{
+  position:relative!important;
+  width:100%!important;
+  aspect-ratio:16 / 9!important;
+  height:auto!important;
+  min-height:0!important;
+  overflow:hidden!important;
+  background:#050a19!important;
+}
+.spotlight-main-poster .spotlight-slide{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  padding:0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  background:#050a19!important;
+  transform:translateX(100%)!important;
+  opacity:0!important;
+  transition:transform .72s cubic-bezier(.22,.8,.22,1),opacity .45s ease!important;
+  z-index:2!important;
+  pointer-events:none!important;
+}
+.spotlight-main-poster .spotlight-slide.is-active{
+  transform:translateX(0)!important;
+  opacity:1!important;
+  pointer-events:auto!important;
+}
+.spotlight-main-poster .spotlight-slide.is-prev{
+  transform:translateX(-100%)!important;
+  opacity:0!important;
+}
+.spotlight-main-poster.is-instant .spotlight-slide{transition:none!important}
+.spotlight-main-poster .spotlight-slide img{
+  position:relative!important;
+  inset:auto!important;
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+  background:#050a19!important;
+  flex:0 0 auto!important;
+}
+.spotlight-main-poster .spotlight-placeholder{display:none!important}
+
+/* Dedicated control strip: dots sit below the 16:9 artwork, never on top of it. */
+.spotlight-dots{
+  position:relative!important;
+  left:auto!important;
+  bottom:auto!important;
+  transform:none!important;
+  width:100%!important;
+  min-height:38px!important;
+  flex:0 0 38px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:9px!important;
+  padding:7px 10px!important;
+  border:0!important;
+  border-top:1px solid rgba(230,240,255,.10)!important;
+  border-radius:0!important;
+  background:rgba(3,7,22,.72)!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+  z-index:10!important;
+}
+.spotlight-dot{
+  width:8px!important;
+  height:8px!important;
+  min-width:8px!important;
+  padding:0!important;
+  border:1px solid rgba(255,255,255,.72)!important;
+  border-radius:50%!important;
+  background:rgba(255,255,255,.22)!important;
+  cursor:pointer!important;
+  appearance:none!important;
+  -webkit-appearance:none!important;
+  transition:all .25s ease!important;
+}
+.spotlight-dot.is-active{
+  width:8px!important;
+  min-width:8px!important;
+  height:8px!important;
+  border-radius:50%!important;
+  background:var(--yellow)!important;
+  border-color:var(--yellow)!important;
+  transform:scale(1.18)!important;
+}
+
+/* Desktop: retain the strong white heading and generous breathing room. */
+.spotlight-copy h3{
+  font-family:'Anton',Impact,sans-serif!important;
+  font-weight:400!important;
+  color:#f7f9ff!important;
+  text-shadow:0 4px 18px rgba(0,0,0,.24)!important;
+  letter-spacing:-.8px!important;
+  line-height:.96!important;
+  margin:0!important;
+  white-space:normal!important;
+  overflow:visible!important;
+}
+@media(min-width:851px){
+  .spotlight-copy{padding:34px 0 34px 8px!important}
+  .spotlight-copy .eyebrow{margin-bottom:22px!important}
+  .spotlight-copy h3{font-size:clamp(56px,5.4vw,88px)!important;line-height:.94!important}
+}
+
+/* Mobile: keep the same bold white treatment, but use two balanced lines
+   instead of four huge lines so the title does not consume the screen. */
+@media(max-width:850px){
+  .spotlight-feature{gap:0!important}
+  .spotlight-main-poster{width:100%!important}
+  .spotlight-copy{padding:30px 4px 18px!important;align-items:flex-start!important}
+  .spotlight-copy .eyebrow{font-size:9px!important;letter-spacing:3.2px!important;margin-bottom:15px!important}
+  .spotlight-copy h3{
+    font-size:clamp(42px,12vw,58px)!important;
+    line-height:1.02!important;
+    letter-spacing:-.35px!important;
+    margin:0!important;
+    white-space:normal!important;
+  }
+  .spotlight-copy h3 br{display:none!important}
+}
+@media(max-width:420px){
+  .spotlight-copy{padding:28px 2px 16px!important}
+  .spotlight-copy h3{font-size:clamp(40px,11.8vw,52px)!important;line-height:1.04!important}
+}
