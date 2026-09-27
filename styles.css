@@ -2147,3 +2147,119 @@ body{font-family:var(--body)!important}
   .spotlight-copy{padding:28px 2px 16px!important}
   .spotlight-copy h3{font-size:clamp(40px,11.8vw,52px)!important;line-height:1.04!important}
 }
+
+/* =========================================================
+   FINAL MOBILE SPOTLIGHT FIX
+   Desktop spotlight remains unchanged.
+   ========================================================= */
+@media (max-width:850px){
+  /* Keep the poster viewport in the exact native 16:9 ratio.
+     The image itself is sized by width so the full 1536x864 artwork
+     is always visible without bottom cropping. */
+  .spotlight-main-poster{
+    aspect-ratio:auto!important;
+    display:flex!important;
+    flex-direction:column!important;
+    overflow:hidden!important;
+  }
+  .spotlight-viewport{
+    width:100%!important;
+    height:auto!important;
+    aspect-ratio:16 / 9!important;
+    flex:0 0 auto!important;
+    overflow:hidden!important;
+  }
+  .spotlight-main-poster .spotlight-slide{
+    padding:0!important;
+    width:100%!important;
+    height:100%!important;
+    align-items:center!important;
+    justify-content:center!important;
+  }
+  .spotlight-main-poster .spotlight-slide img{
+    width:100%!important;
+    height:auto!important;
+    max-width:100%!important;
+    max-height:100%!important;
+    object-fit:contain!important;
+    object-position:center center!important;
+    flex:none!important;
+  }
+
+  /* Separate control strip, but restore the earlier animated active-pill dots. */
+  .spotlight-dots{
+    position:relative!important;
+    left:auto!important;
+    bottom:auto!important;
+    transform:none!important;
+    width:100%!important;
+    min-height:54px!important;
+    height:54px!important;
+    flex:0 0 54px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:8px!important;
+    padding:8px 10px!important;
+    border:0!important;
+    border-top:1px solid rgba(230,240,255,.10)!important;
+    border-radius:0!important;
+    background:rgba(3,7,22,.72)!important;
+    backdrop-filter:none!important;
+    -webkit-backdrop-filter:none!important;
+    z-index:10!important;
+  }
+  .spotlight-dot{
+    width:8px!important;
+    height:8px!important;
+    min-width:8px!important;
+    padding:0!important;
+    border:1px solid rgba(255,255,255,.62)!important;
+    border-radius:50%!important;
+    background:rgba(255,255,255,.22)!important;
+    transform:none!important;
+    transition:width .28s ease,min-width .28s ease,background .28s ease,border-color .28s ease,transform .28s ease!important;
+  }
+  .spotlight-dot.is-active{
+    width:20px!important;
+    min-width:20px!important;
+    height:8px!important;
+    border-radius:999px!important;
+    background:var(--yellow)!important;
+    border-color:var(--yellow)!important;
+    transform:scale(1.02)!important;
+  }
+
+  /* Restore the intended four-line title on mobile. */
+  .spotlight-copy{
+    padding:30px 12px 28px!important;
+    min-width:0!important;
+    overflow:hidden!important;
+  }
+  .spotlight-copy .eyebrow{
+    margin-bottom:20px!important;
+  }
+  .spotlight-copy h3{
+    display:block!important;
+    width:100%!important;
+    max-width:100%!important;
+    font-size:clamp(48px,13.5vw,64px)!important;
+    line-height:.94!important;
+    letter-spacing:-.35px!important;
+    margin:0!important;
+    white-space:normal!important;
+    overflow:visible!important;
+    word-break:normal!important;
+  }
+  .spotlight-copy h3 br{display:block!important}
+}
+
+@media (max-width:420px){
+  .spotlight-copy{padding:28px 10px 26px!important}
+  .spotlight-copy .eyebrow{margin-bottom:18px!important}
+  .spotlight-copy h3{
+    font-size:clamp(45px,13.4vw,56px)!important;
+    line-height:.95!important;
+    letter-spacing:-.25px!important;
+  }
+}
