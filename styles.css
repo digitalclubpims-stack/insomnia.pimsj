@@ -2263,3 +2263,108 @@ body{font-family:var(--body)!important}
     letter-spacing:-.25px!important;
   }
 }
+
+/* =========================================================
+   SPOTLIGHT — NATIVE 16:9 ARTWORK / FINAL RESPONSIVE FIX
+   The source posters are 1536x864. Keep the viewport at exactly
+   16:9 and size the artwork by width so the complete poster is
+   always visible and centered on every screen size.
+   ========================================================= */
+.spotlight-main-poster .spotlight-viewport{
+  position:relative!important;
+  width:100%!important;
+  aspect-ratio:16 / 9!important;
+  height:auto!important;
+  min-height:0!important;
+  overflow:hidden!important;
+  display:block!important;
+  background:#050a19!important;
+}
+.spotlight-main-poster .spotlight-slide{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  padding:0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  overflow:hidden!important;
+}
+.spotlight-main-poster .spotlight-slide img{
+  position:absolute!important;
+  left:50%!important;
+  top:50%!important;
+  width:100%!important;
+  height:auto!important;
+  max-width:none!important;
+  max-height:none!important;
+  transform:translate(-50%,-50%)!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+  display:block!important;
+  margin:0!important;
+  flex:none!important;
+  background:#050a19!important;
+}
+
+/* The control strip stays separate from the artwork on desktop too.
+   Restore the animated active-pill treatment everywhere. */
+.spotlight-dots{
+  position:relative!important;
+  left:auto!important;
+  bottom:auto!important;
+  transform:none!important;
+  width:100%!important;
+  min-height:54px!important;
+  height:54px!important;
+  flex:0 0 54px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:8px!important;
+  padding:8px 10px!important;
+  border:0!important;
+  border-top:1px solid rgba(230,240,255,.10)!important;
+  border-radius:0!important;
+  background:rgba(3,7,22,.72)!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+}
+.spotlight-dot{
+  width:8px!important;
+  height:8px!important;
+  min-width:8px!important;
+  padding:0!important;
+  border:1px solid rgba(255,255,255,.62)!important;
+  border-radius:50%!important;
+  background:rgba(255,255,255,.22)!important;
+  transform:none!important;
+  transition:width .28s ease,min-width .28s ease,background .28s ease,border-color .28s ease,transform .28s ease!important;
+}
+.spotlight-dot.is-active{
+  width:20px!important;
+  min-width:20px!important;
+  height:8px!important;
+  border-radius:999px!important;
+  background:var(--yellow)!important;
+  border-color:var(--yellow)!important;
+  transform:scale(1.02)!important;
+}
+
+/* Mobile uses the exact same 16:9 viewport; do not introduce a
+   portrait crop or a fixed-height image box. */
+@media(max-width:850px){
+  .spotlight-main-poster .spotlight-viewport{
+    width:100%!important;
+    height:auto!important;
+    aspect-ratio:16 / 9!important;
+    flex:0 0 auto!important;
+  }
+  .spotlight-main-poster .spotlight-slide img{
+    width:100%!important;
+    height:auto!important;
+    max-width:none!important;
+    max-height:none!important;
+  }
+}
