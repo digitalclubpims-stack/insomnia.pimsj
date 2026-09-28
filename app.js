@@ -1,5 +1,5 @@
 // Paste your final links here. The two buttons on the home page use these values.
-const BROCHURE_URL=''; // Google Drive brochure link
+const BROCHURE_URL='https://drive.google.com/file/d/1yj90N6QG0jgdYWxiqlImYvdCwmLwfw-0/view?usp=drivesdk'; // Google Drive brochure link
 const DEVELOPER_INSTAGRAM_URL='https://www.instagram.com/bansal.arnav?stkn=b2tibHVwazJ1dWsw';
 const EVENT_REGISTRATION_URL='https://docs.google.com/spreadsheets/d/1ll3WSmmYoMrOaPJMRCKyGCP9Z8eD9Tfo/edit?usp=drivesdk&ouid=113367413386334836636&rtpof=true&sd=true';
 
